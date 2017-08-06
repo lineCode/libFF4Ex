@@ -1,13 +1,14 @@
 ﻿#include "stdafx.h"
 #include "FF4Ex_Export.h"
 #include "FF4Ex_Define.h"
+#include "bass.h"
 
 extern "C"{
 #include "libavutil/avutil.h"  
 #include "libavcodec/avcodec.h"  
 #include "libavformat/avformat.h"  
 #include "libavdevice/avdevice.h"  
-#include "libswscale/swscale.h"  
+#include "libswscale/swscale.h"
 }
 
 #pragma comment(lib,"avutil.lib")  
@@ -15,6 +16,7 @@ extern "C"{
 #pragma comment(lib,"avformat.lib")  
 #pragma comment(lib,"swscale.lib")  
 #pragma comment (lib, "gdiplus.lib")
+#pragma comment (lib, "bass.lib")
 
 #define __STDC_CONSTANT_MACROS
 
@@ -41,10 +43,16 @@ int img_convert2(AVPicture *dst, AVPixelFormat dst_pix_fmt, AVPicture *src, AVPi
 	return 0;
 }
 
+/*BASS音频流*/
+DWORD(CALLBACK StreamProc)(HSTREAM handle, void *buffer, DWORD length, void *user){
+
+	return 0;
+}
 
 int EXPORT_STDCALL FF4Ex_Init(){
 
 	av_register_all();//注册所有的解码器
+	BASS_Init(-1, 44100, 0, NULL, 0);
 
 	return 2333;
 }
@@ -138,8 +146,9 @@ int EXPORT_STDCALL FF4Ex_StreamVideoCodec(AVFormatContext *_pFormatCtx, AVCodecC
 int EXPORT_STDCALL FF4Ex_StreamAudioCodec(AVFormatContext *_pFormatCtx, AVCodecContext *ACodecCtx, int *Frame){
 	AVFrame *_pFrame;
 	_pFrame = av_frame_alloc();
-
-
+	int size = av_samples_get_buffer_size(NULL, ACodecCtx->channels, ACodecCtx->frame_size, ACodecCtx->sample_fmt, 1);
+	uint8_t* frame_buf = (uint8_t *)av_malloc(size);
+	avcodec_fill_audio_frame(_pFrame, ACodecCtx->channels, ACodecCtx->sample_fmt, (const uint8_t*)frame_buf, size, 1);
 
 	*Frame = (int)_pFrame;
 	return FF4EX_STATUS_SUCCESS;
@@ -214,7 +223,9 @@ int EXPORT_STDCALL FF4Ex_StreamAudioPlay(AVFormatContext *FormatCtx, AVCodecCont
 		if (_sPacket.stream_index == AStream){//如果为音频Channel
 			avcodec_decode_audio4(ACodecCtx, Frame, &_nFrameFinished, &_sPacket);
 			if (_nFrameFinished){
-
+				HSTREAM _hStream = BASS_StreamCreate(ACodecCtx->sample_rate, ACodecCtx->channels, 0, StreamProc, NULL);
+				BASS_ChannelPlay(_hStream,false);
+				BASS_StreamFree(_hStream);
 				break;
 			}
 		}
