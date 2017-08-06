@@ -41,8 +41,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\l5992\Desktop\FF4Exdui\FF4Exdui\ffmpeg\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\l5992\Desktop\FF4Exdui\FF4Exdui\ffmpeg\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>.\libass\c;.\ffmpeg\include;$(IncludePath)</IncludePath>
+    <LibraryPath>.\libass\c;.\ffmpeg\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
