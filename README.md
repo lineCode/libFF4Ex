@@ -6,6 +6,7 @@ A dll for GDI+ with FFMPEG
 
 
 <strong>Usage</strong>
+<pre>
 <code>
     FF4Ex_Init();   //FFMPEG Initialize
     FF4Ex_Open(_cFilePath, _pFormatCtx, _pVCodecCtx, _pVStream, _pACodecCtx, _pAStream);    //Open file and returns Codecs and StreamID and file format
@@ -18,3 +19,4 @@ A dll for GDI+ with FFMPEG
     /*Any code.*/
 
 </code>
+</pre>
