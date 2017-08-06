@@ -10,7 +10,7 @@ A dll for GDI+ with FFMPEG<br>
 
 
 <strong>License</strong><br>
-<div>GNU FDL 1.3</div><img src="https://img.shields.io/badge/license-FDL%20License%201.3-ff69b4.svg">
+<div>GNU LGPL3.0</div><img src="https://img.shields.io/badge/license-GNU%20LGPL3.0-ff69b4.svg">
 
 <strong>Usage</strong>
 <pre>
