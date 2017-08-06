@@ -1,8 +1,8 @@
-# FF4GdiPlus
-A dll for GDI+ with FFMPEG
+# FFMPEG For Gdiplus [FF4Gdiplus]
+A dll for GDI+ with FFMPEG<br>
 一个基于FFMPEG封装的DLL， 它允许你使用GDI+渲染视频
 
-目前还未完善音频流的解码和播放 :p
+目前还未完善音频流的解码,播放,进度控制:3
 
 
 <strong>Usage</strong>
@@ -32,3 +32,9 @@ A dll for GDI+ with FFMPEG
 
 </code>
 </pre>
+
+<strong>Build</strong>
+<code>Visual Studio 2013</code>
+
+<strong>License</strong>
+GNU FDL 1.3<img src="https://img.shields.io/badge/license-FDL%20License%201.3-ff69b4.svg">
