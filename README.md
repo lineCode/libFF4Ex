@@ -8,15 +8,27 @@ A dll for GDI+ with FFMPEG
 <strong>Usage</strong>
 <pre>
 <code>
-    FF4Ex_Init();   //FFMPEG Initialize
-    FF4Ex_Open(_cFilePath, _pFormatCtx, _pVCodecCtx, _pVStream, _pACodecCtx, _pAStream);    //Open file and returns Codecs and StreamID and file format
-    FF4Ex_GetFileInfo(_pFormatCtx, _pVCodecCtx, _sFileInfo)     //Get stream video info. Height and Width;
+    /*FFMPEG Initialize*/
+    FF4Ex_Init();
 
-    /*Any code.*/
-    GdipBitmapLockBits();   //Lock bits
-    FF4Ex_DrawRect(_pFormatCtx, _pVCodecCtx, _pBitmap, _pFrame, _pVStream, RectF)  ' //解码并绘制
-    GdipBitmapUnlockBits();   //Unlock bits and refresh the buffer.
-    /*Any code.*/
+    /*Open file and returns Codecs and StreamID and file format*/
+    FF4Ex_Open(_cFilePath, _pFormatCtx, _pVCodecCtx, _pVStream, _pACodecCtx, _pAStream);
+
+    /*Get stream video info. Height and width;*/
+    FF4Ex_GetFileInfo(_pFormatCtx, _pVCodecCtx, _sFileInfo);
+
+    //Heres your any code.
+
+    /*Lock bits*/
+    GdipBitmapLockBits();
+
+    /*Decode and draw the stream video in the RectF.*/
+    FF4Ex_DrawRect(_pFormatCtx, _pVCodecCtx, _pBitmap, _pFrame, _pVStream, RectF);
+
+    /*Unlock bits and refresh the buffer.*/
+    GdipBitmapUnlockBits();
+    
+    //Heres your any code.
 
 </code>
 </pre>
