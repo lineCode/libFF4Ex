@@ -1,4 +1,4 @@
-# FFMPEG For Gdiplus [FF4Gdiplus]
+﻿# FFMPEG For Gdiplus [FF4Gdiplus]
 A dll for GDI+ with FFMPEG<br>
 一个基于FFMPEG封装的DLL， 它允许你使用GDI+渲染视频
 
