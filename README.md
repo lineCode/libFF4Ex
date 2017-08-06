@@ -4,6 +4,13 @@ A dll for GDI+ with FFMPEG<br>
 
 目前还未完善音频流的解码,播放,进度控制:3
 
+<strong>Build</strong><br>
+<div>Visual Studio 2013</div>
+<img src="https://img.shields.io/badge/build-passing-green.svg">
+
+
+<strong>License</strong><br>
+<div>GNU FDL 1.3</div><img src="https://img.shields.io/badge/license-FDL%20License%201.3-ff69b4.svg">
 
 <strong>Usage</strong>
 <pre>
@@ -33,10 +40,3 @@ A dll for GDI+ with FFMPEG<br>
 </code>
 </pre>
 
-<strong>Build</strong><br>
-<div>Visual Studio 2013</div>
-<img src="https://img.shields.io/badge/build-passing-green.svg">
-
-
-<strong>License</strong><br>
-<div>GNU FDL 1.3</div><img src="https://img.shields.io/badge/license-FDL%20License%201.3-ff69b4.svg">
