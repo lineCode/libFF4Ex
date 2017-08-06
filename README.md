@@ -17,7 +17,7 @@ A dll for GDI+ with FFMPEG
     /*Get stream video info. Height and width;*/
     FF4Ex_GetFileInfo(_pFormatCtx, _pVCodecCtx, _sFileInfo);
 
-    //Heres your any code.
+    //Here's your code.
 
     /*Lock bits*/
     GdipBitmapLockBits();
@@ -27,8 +27,8 @@ A dll for GDI+ with FFMPEG
 
     /*Unlock bits and refresh the buffer.*/
     GdipBitmapUnlockBits();
-    
-    //Heres your any code.
+
+    //Here's your code.
 
 </code>
 </pre>
