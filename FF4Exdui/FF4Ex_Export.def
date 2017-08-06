@@ -1,0 +1,15 @@
+﻿LIBRARY "FF4Exdui.dll"
+EXPORTS
+	FF4Ex_Init
+	FF4Ex_Open
+	FF4Ex_StreamVideoCodec
+	FF4Ex_StreamAudioCodec
+	FF4Ex_StreamVideoDraw
+	FF4Ex_StreamVideoDrawRect
+	FF4Ex_StreamAudioPlay
+	FF4Ex_StreamFileGetInfo
+	FF4Ex_CloseStreamAudio
+	FF4Ex_CloseStreamVideo
+	FF4Ex_CloseStreamInput
+	FF4Ex_UnInit
+	FF4Ex_Test
