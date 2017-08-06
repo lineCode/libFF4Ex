@@ -33,8 +33,8 @@ A dll for GDI+ with FFMPEG<br>
 </code>
 </pre>
 
-<strong>Build</strong>
+<strong>Build</strong><br>
 <code>Visual Studio 2013</code>
 
-<strong>License</strong>
+<strong>License</strong><br>
 GNU FDL 1.3<img src="https://img.shields.io/badge/license-FDL%20License%201.3-ff69b4.svg">
