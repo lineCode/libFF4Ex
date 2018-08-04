@@ -1,0 +1,16 @@
+LIBRARY libFF4Ex
+EXPORTS
+
+FF4Ex_Init
+FF4Ex_UnInit
+FF4Ex_SetResolution
+FF4Ex_Open
+FF4Ex_OpenHW
+FF4Ex_Close
+FF4Ex_StreamPlay
+FF4Ex_StreamStop
+FF4Ex_StreamPause
+FF4Ex_StreamSeek
+FF4Ex_StreamSetVolume
+FF4Ex_StreamGetInfo
+FF4Ex_DrawBitmap
